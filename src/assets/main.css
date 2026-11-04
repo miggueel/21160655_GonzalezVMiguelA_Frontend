@@ -1,35 +1,85 @@
 @import './base.css';
 
+/* =========================================
+   REINICIO DE LOS ESTILOS DE VUE
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: block;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  place-items: initial;
+}
+
+/* El contenedor de Vue debe ocupar toda la ventana */
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   font-weight: normal;
 }
 
-a,
-.green {
+/* =========================================
+   ESTRUCTURA DE LA APLICACIÓN
+   ========================================= */
+
+.app-container {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  width: calc(100% - 265px);
+  min-width: 0;
+  max-width: none;
+}
+
+.page-content {
+  width: 100%;
+  max-width: none;
+}
+
+/* =========================================
+   ENLACES
+   ========================================= */
+
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
+/* =========================================
+   ADAPTACIÓN A PANTALLAS PEQUEÑAS
+   ========================================= */
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+@media (max-width: 650px) {
+  .app-container {
+    flex-direction: column;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  .main-content {
+    width: 100%;
   }
 }
