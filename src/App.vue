@@ -36,6 +36,12 @@ import { RouterLink, RouterView } from 'vue-router'
           <span>Roles</span>
           <span class="nav-arrow">↗</span>
         </RouterLink>
+
+        <RouterLink to="/empleados" class="nav-link">
+          <span class="nav-icon">♧</span>
+          <span>Empleados</span>
+          <span class="nav-arrow">↗</span>
+        </RouterLink>
       </nav>
 
       <div class="sidebar-note">
